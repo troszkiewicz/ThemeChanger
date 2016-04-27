@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <style>
+      h1, p, div {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div>
+      <h1>
+        We like colors
+      </h1>
+      
+      <p>
+        Yes we do!
+      </p>
+      <p class="theme"></p>
+    </div>
+    <script> 
+    var askTheme = false;
+    var askQuestion = "What color theme would you like to view this page in?";
+  
+    while (askTheme === false) {
+      askTheme = prompt(askQuestion);
+
+      if (askTheme === "green"){
+        $('h1').css("color", "darkgreen");
+        $('p').css("color", "mediumseagreen");
+        $('div').css("background-color", "palegreen");
+        $('.theme').text("You chose a "+ askTheme +" theme.");
+        $('div').prepend("<img src='theGreenOne.png'>");
+      } else if (askTheme === "blue") {
+        $('h1').css("color", "darkblue");
+        $('p').css("color", "mediumblue");
+        $('div').css("background-color", "skyblue");
+        $('.theme').text("You chose a "+ askTheme +" theme.");
+        $('div').prepend("<img src='theBlueOne.png'>");
+      } else if (askTheme === "red"){
+        $('h1').css("color", "darkred");
+        $('p').css("color", "firebrick");
+        $('div').css("background-color", "lightcoral");
+        $('.theme').text("You chose a "+ askTheme +" theme.");
+        $('div').prepend("<img src='theRedOne.png'>");
+      } else {
+        askTheme = false;
+        askQuestion = "We don't have that color, please try a different one."
+      }
+      
+    }
+
+
+    </script>
+  </body>
+
+</html>
